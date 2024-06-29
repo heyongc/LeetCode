@@ -34,6 +34,7 @@ var twoSum2 = function (nums, target) {
       map[nums[i]] = i;
     }
   }
+  return [];
 };
 
 console.log(twoSum2([0, 1, 8, 11, 15, 8, 7, 5, 4], 9));
