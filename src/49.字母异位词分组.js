@@ -11,12 +11,11 @@
 // 时间复杂度：O(n*k)
 var groupAnagrams = function (strs) {
   let map = new Map();
-  let aUnicode = "a".charCodeAt();
 
   for (const s of strs) {
     let hashKey = new Array(26).fill(0);
     for (const c of s) {
-      hashKey[c.charCodeAt() - aUnicode] += 1;
+      hashKey[c.charCodeAt() - "a".charCodeAt()] += 1;
     }
 
     hashKey = hashKey.join();
