@@ -42,7 +42,7 @@ console.log("【res】", res);
 // var groupAnagrams = function (strs) {
 //   let map = new Map();
 //   for (const s of strs) {
-//     let hashKey = ssplit("").sort().join("");
+//     let hashKey = s.split("").sort().join("");
 
 //     if (map.has(hashKey)) {
 //       map.get(hashKey).push(s);
