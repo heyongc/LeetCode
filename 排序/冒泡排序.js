@@ -14,6 +14,8 @@ var sortArray = function (nums) {
       }
     }
   }
+
+  return nums;
 };
 
 let arr = [10, 1, 5, 8, 7, 3];
