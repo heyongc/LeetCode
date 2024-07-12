@@ -1,55 +1,27 @@
-// 题目描述：
+/*
+ * @lc app=leetcode.cn id=49 lang=javascript
+ *
+ * [49] 字母异位词分组
+ */
 
-// 给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。
-// 字母异位词 是由重新排列源单词的所有字母得到的一个新单词。
-
-// 提示：
-// 1 <= strs.length <= 104
-// 0 <= strs[i].length <= 100
-// strs[i] 仅包含小写字母
-
-// 时间复杂度：O(n*k)
+// @lc code=start
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
 var groupAnagrams = function (strs) {
   let map = new Map();
 
-  for (const s of strs) {
-    let hashKey = new Array(26).fill(0);
-    for (const c of s) {
-      hashKey[c.charCodeAt() - "a".charCodeAt()] += 1;
-    }
+  for (const str of strs) {
+    const sortStr = str.split("").sort().join("");
 
-    hashKey = hashKey.join();
-
-    if (map.has(hashKey)) {
-      map.get(hashKey).push(s);
+    if (map.has(sortStr)) {
+      map.get(sortStr).push(str);
     } else {
-      map.set(hashKey, [s]);
+      map.set(sortStr, [str]);
     }
   }
 
   return Array.from(map.values());
 };
-
-let res = groupAnagrams([
-  "bddddddddddbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-  "bbbbbbbbbbc",
-  "hhh",
-  "ab",
-  "ba",
-]);
-console.log("【res】", res);
-
-// var groupAnagrams = function (strs) {
-//   let map = new Map();
-//   for (const s of strs) {
-//     let hashKey = s.split("").sort().join("");
-
-//     if (map.has(hashKey)) {
-//       map.get(hashKey).push(s);
-//     } else {
-//       map.set(hashKey, [s]);
-//     }
-//   }
-
-//   return Array.from(map.values());
-// };
+// @lc code=end
