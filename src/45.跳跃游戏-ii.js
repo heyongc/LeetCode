@@ -17,14 +17,13 @@ var jump = function (nums) {
   let ans = 0;
   let end = 0;
 
-  for (let i = 0; i < nums.length - 1; i++) {
+  for (let i = 0; i < nums.length; i++) {
     maxReach = Math.max(maxReach, i + nums[i]);
     if (i === end) {
       end = maxReach;
       ans++;
+      if (maxReach >= nums.length - 1) return ans;
     }
   }
-
-  return ans;
 };
 // @lc code=end
