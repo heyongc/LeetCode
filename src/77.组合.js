@@ -20,8 +20,9 @@ var combine = function (n, k) {
       return;
     }
 
-    for (let i = start; i < n + 1; i++) {
-      path.push(i);
+    let len = path.length;
+    for (let i = start; i < n - (k - len) + 1; i++) {
+      path.push(i + 1);
 
       backtrack(n, k, i + 1);
 
@@ -29,7 +30,7 @@ var combine = function (n, k) {
     }
   };
 
-  backtrack(n, k, 1);
+  backtrack(n, k, 0);
 
   return result;
 };
