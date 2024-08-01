@@ -10,6 +10,8 @@
  * @param {number} target
  * @return {number}
  */
+
+// 时间复杂度：O(log n) 空间复杂度：O(1)
 var search = function (nums, target) {
   let start = 0;
   let end = nums.length - 1;
@@ -30,6 +32,3 @@ var search = function (nums, target) {
   return -1;
 };
 // @lc code=end
-
-let res = search([-1, 0, 3, 5, 9, 12], 2);
-console.log("【res】", res);
